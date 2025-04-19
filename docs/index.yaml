@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  springboot-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-19T12:06:43.790067-05:00"
+    description: A Helm chart for Spring Boot app
+    digest: 81d5662c674a1faeddfd2d2277a1acfcdef6aab86c1bb3e896cf1b4c6591614a
+    name: springboot-app
+    urls:
+    - https://sardul3.github.io/k8-charts/springboot-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-04-19T12:06:43.789475-05:00"
