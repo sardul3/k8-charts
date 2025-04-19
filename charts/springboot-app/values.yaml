@@ -20,5 +20,7 @@ ingress:
         - path: /
           pathType: Prefix
 
+metrics:
+  enabled: false
 
-resources {}
+resources: {}
