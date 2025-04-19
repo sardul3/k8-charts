@@ -1,0 +1,6 @@
+dependencies:
+- name: springboot-base
+  repository: file://../../base
+  version: 0.1.0
+digest: sha256:b7bae139dc33fc2fcec393c0a6dcb84860ca20adcf8c867ac5c543b493996ffa
+generated: "2025-04-19T18:45:45.66035-05:00"

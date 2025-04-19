@@ -1,0 +1,30 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/sardul3/three-cats-app
+  tag: "c38839e"
+  pullPolicy: IfNotPresent
+  pullSecrets:
+    - name: ghcr-secret
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: apps.sardul3.com
+      paths:
+        - path: /threecats/?(.*)
+          pathType: ImplementationSpecific
+
+metrics:
+  enabled: true
+  appname: threecats
+  namespace: monitoring
+  prometheusRelease: prometheus
+  portName: http
+  path: /actuator/prometheus
+  interval: 15s

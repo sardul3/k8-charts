@@ -1,0 +1,9 @@
+apiVersion: v2
+name: three-cats-app
+description: Three Cats Spring Boot App
+version: 0.1.0
+
+dependencies:
+  - name: springboot-base
+    version: 0.1.0
+    repository: "file://../../base"
