@@ -1,0 +1,25 @@
+replicaCount: 1
+
+image:
+  repository: dummy
+  tag: latest
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: "nginx"
+  hosts: []
+
+metrics:
+  enabled: false
+  appname: dummy
+  namespace: monitoring
+  prometheusRelease: prometheus
+  portName: http
+  path: /actuator/prometheus
+  interval: 30s

@@ -1,0 +1,21 @@
+{{- if and .Values.metrics (default false .Values.metrics.enabled) }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ .Values.metrics.appname }}
+  namespace: {{ .Values.metrics.namespace }}
+  labels:
+    release: {{ .Values.metrics.prometheusRelease }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.metrics.appname }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  endpoints:
+    - path: {{ .Values.metrics.path }}
+      port: {{ .Values.metrics.portName }}
+      interval: {{ .Values.metrics.interval }}
+      honorLabels: true
+{{- end }}
