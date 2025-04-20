@@ -3,7 +3,7 @@ springboot-base:
 
   image:
     repository: ghcr.io/sardul3/three-cats-app
-    tag: "cf0e496"
+    tag: "1577162"
     pullPolicy: IfNotPresent
     pullSecrets:
       - name: ghcr-secret
